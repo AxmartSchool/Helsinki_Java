@@ -31,6 +31,7 @@ public class Helsinki {
         olimpiaiPontokSzama();
         legsikeresebbSportag();
         Helyezes.Kiiras(helyesAllomany());
+        legtobbSportolo();
         
         
     }
@@ -165,6 +166,25 @@ public class Helsinki {
              
         
         return output;
+    }
+
+    private static void legtobbSportolo() {
+        
+        Helyezes legtobbSportolo = new Helyezes(0,0,null,null);
+        
+        for(Helyezes h : helyezesek){
+            
+            if (h.getSportolokSzama()>legtobbSportolo.getSportolokSzama()) {
+                legtobbSportolo = h;
+            }
+            
+            
+        }
+        
+        System.out.println("8. Feladat:");
+        System.out.println("Sportag: "+ legtobbSportolo.getSportagNeve());
+        System.out.println("Versenyszam: "+ legtobbSportolo.getVersenyszamNeve() );
+        System.out.println("Sportolok szama: "+ legtobbSportolo.getSportolokSzama());
     }
     
 }
