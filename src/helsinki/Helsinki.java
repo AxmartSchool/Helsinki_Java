@@ -26,6 +26,7 @@ public class Helsinki {
         
         pontszerzoHelyekSzama();
         ermekSzama();
+        olimpiaiPontokSzama();
         
     }
 
@@ -64,7 +65,30 @@ public class Helsinki {
         System.out.println("Arany: "+ arany);
         System.out.println("Ezust: "+ ezust);
         System.out.println("Bronz: "+ bronz);
+        System.out.println("Osszesen: : "+ (bronz+ezust+arany));
     
+        
+        
+        
+    }
+
+    private static void olimpiaiPontokSzama() {
+        
+        int osszeg = 0;
+        
+        for(Helyezes h : helyezesek){
+        
+            osszeg += 7 - h.getElertHelyezes();
+            if (h.getElertHelyezes() == 1) {
+                osszeg ++;
+            }
+        
+        
+        
+        }
+        
+        System.out.println("5. Feladat:");
+        System.out.println("Olimpiai pontok szama : "+ osszeg);
         
         
         
