@@ -7,6 +7,8 @@ package helsinki;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import javafx.util.Pair;
 
 /**
  *
@@ -27,6 +29,7 @@ public class Helsinki {
         pontszerzoHelyekSzama();
         ermekSzama();
         olimpiaiPontokSzama();
+        legsikeresebbSportag();
         
     }
 
@@ -89,6 +92,43 @@ public class Helsinki {
         
         System.out.println("5. Feladat:");
         System.out.println("Olimpiai pontok szama : "+ osszeg);
+        
+        
+        
+    }
+
+    private static void legsikeresebbSportag() {
+        
+        System.out.println("6. Feladat:");
+        
+        Pair<String,Integer> legsikeresebbSportag = new Pair<>(null,0);
+        
+        HashMap<String,Integer> sportagak = new HashMap<>();
+        for(Helyezes h : helyezesek){
+            
+            if (sportagak.containsKey(h.getSportagNeve())) {
+             
+                 sportagak.put(h.getSportagNeve(), sportagak.get(h.getSportagNeve())+1);
+                 
+            }else{
+                sportagak.put(h.getSportagNeve(),1);
+            }
+            
+            
+        }
+        
+        for (String sportag : sportagak.keySet()){
+            
+            if (sportagak.get(sportag) > legsikeresebbSportag.getValue()) {
+               
+                legsikeresebbSportag = new Pair<>(sportag,sportagak.get(sportag));
+                
+            }
+            
+            
+        }
+        
+        System.out.println(legsikeresebbSportag.getKey() +" sportagban szereztek tobb ermet");
         
         
         
