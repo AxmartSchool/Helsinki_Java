@@ -30,6 +30,8 @@ public class Helsinki {
         ermekSzama();
         olimpiaiPontokSzama();
         legsikeresebbSportag();
+        Helyezes.Kiiras(helyesAllomany());
+        
         
     }
 
@@ -132,6 +134,37 @@ public class Helsinki {
         
         
         
+    }
+
+    private static String[] helyesAllomany() {
+           
+        String[] output = new String[helyezesek.size()];
+        int osszeg;
+        String sportag = null;
+        
+        
+        for (int i = 0; i < helyezesek.size(); i++) {
+            
+             osszeg = 0;
+            osszeg += 7 - helyezesek.get(i).getElertHelyezes();
+            if (helyezesek.get(i).getElertHelyezes() == 1) {
+                osszeg ++;
+            }
+            
+            
+            if (helyezesek.get(i).getSportagNeve().equals("kajakkenu")) {
+                sportag = "kajak-kenu";
+            }else{
+                sportag = helyezesek.get(i).getSportagNeve();
+            }
+            
+            
+            output[i]= helyezesek.get(i).getElertHelyezes()+" "+helyezesek.get(i).getSportolokSzama()+" "+osszeg+" "+ sportag+" "+ helyezesek.get(i).getVersenyszamNeve();
+            
+        }
+             
+        
+        return output;
     }
     
 }

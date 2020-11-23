@@ -6,8 +6,10 @@
 package helsinki;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -47,6 +49,23 @@ public class Helyezes {
     
     
     
+    public static void Kiiras(String[] adatok) throws FileNotFoundException{
+        
+        System.setProperty("file.encoding", "UTF8");
+        PrintWriter pw = new PrintWriter("helsinki2.txt");
+        
+        for(String sor : adatok){
+            
+            pw.println(sor);
+            
+            
+            
+        }
+        pw.close();
+        
+        
+        
+    }
     
     
     public static ArrayList<Helyezes> Beolvasas() throws IOException{
