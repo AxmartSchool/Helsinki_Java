@@ -25,12 +25,48 @@ public class Helsinki {
         helyezesek = Helyezes.Beolvasas();
         
         pontszerzoHelyekSzama();
+        ermekSzama();
         
     }
 
     private static void pontszerzoHelyekSzama() {
         
-        System.out.println("A pontszerzo helyezesek szama: "+  helyezesek.size()); 
+        System.out.println("3. Feladat: ");
+        System.out.println("Pontszerzo helyezesek szama: "+ helyezesek.size());
+        
+        
+        
+    }
+
+    private static void ermekSzama() {
+       
+        int arany = 0;
+        int ezust = 0;
+        int bronz = 0;
+        
+        for(Helyezes h : helyezesek){
+            
+            switch(h.getElertHelyezes()){
+                case 1:
+                    arany++;
+                    break;
+               case 2:
+                    ezust++;
+                    break;
+               case 3:
+                    bronz++;
+                    break;
+            }
+
+        }
+        
+        System.out.println("4. Feladat:");
+        System.out.println("Arany: "+ arany);
+        System.out.println("Ezust: "+ ezust);
+        System.out.println("Bronz: "+ bronz);
+    
+        
+        
         
     }
     
